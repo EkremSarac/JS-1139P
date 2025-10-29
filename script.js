@@ -30,7 +30,14 @@ document.getElementById("degerGir1").addEventListener("click", function() {
     let yeniSkor = prompt("Takım A için bir sayı girin:")
     if (!isNaN(yeniSkor) && yeniSkor !== null && yeniSkor.trim() !== "") {
         scoreA = parseInt(yeniSkor)
-        document.getElementById("score1").innerText = scoreA
+
+        if (yeniSkor < 0) {
+            alert("EKSİ GOL OLMAZ")
+        } else{
+            document.getElementById("score1").innerText = scoreA
+        }
+
+        
     } else {
         alert("Lütfen geçerli bir sayı girin!")
     }
@@ -49,7 +56,13 @@ document.getElementById("degerGir2").addEventListener("click", function() {
 
 document.getElementById("changeName1").addEventListener("click", function(){
     let yeniIsim = prompt("İsim girin")
-    document.getElementById("team1").innerHTML = yeniIsim
+    if (yeniIsim == "") {
+        alert("geçerli bir isim girin")
+
+    } else {
+        document.getElementById("team1").innerHTML = yeniIsim
+    }
+    
 })
 
 document.getElementById("changeName2").addEventListener("click", function(){
